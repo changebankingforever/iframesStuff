@@ -211,12 +211,12 @@ window.onload = function(e) {
 		 }
 		 
 		 //Receive Interac e-Transfer® screen
-		 if(pageTitle == "Receive Interac e-Transfer®")
+		 /*if(pageTitle == "Receive Interac e-Transfer®")
 		 {
 			var requiredAttr = document.querySelectorAll(".required");
 			requiredAttr[0].classList.add("remove-padd-top");
 			requiredAttr[0].textContent = "You have answered the security question correctly, please indicate whether you would like to accept or decline this transfer";
-		 }
+		 }*/
 		 
 		 //Receive Interac e-Transfer® - Confirm screen
 		 if(pageTitle == "Receive Interac e-Transfer® - Confirm")
@@ -293,7 +293,7 @@ window.onload = function(e) {
 		 }*/
 		 
 		 //Request Money - Confirm screen
-		 if(pageTitle == "Request Money - Confirm")
+		 /*if(pageTitle == "Request Money - Confirm")
 		 {
 			showAlertImageWithShowFormDiv();
 				
@@ -303,19 +303,19 @@ window.onload = function(e) {
 			inputErrorImageReferenceNode.parentNode.insertBefore(inputSuccessImageNode, inputErrorImageReferenceNode);
 				
 			document.querySelector('.success-text').textContent = "Please confirm money request details";
-		 }
+		 }*/
 		 
 		 //Request Money - Receipt screen
-		 if(pageTitle == "Request Money - Receipt")
+		 /*if(pageTitle == "Request Money - Receipt")
 		 {
 			showSucessImageAndTextReceipN();
 				
 			document.querySelector('.success-text').textContent = "Request Status Completed";
 				
-			showPrintButton();
+			//showPrintButton();
 				
 			var link1 = document.querySelector(".link1").classList.add("show-link1");
-		 }
+		 }*/
 		 
 		 //Resend Money Request Notice - Confirm screen
 		 if(pageTitle == "Resend Money Request Notice - Confirm")
@@ -337,7 +337,7 @@ window.onload = function(e) {
 				
 			document.querySelector('.success-text').textContent = "Request resent successfully";
 				
-			showPrintButton();
+			//showPrintButton();
 		 }
 		 
 		 //Resend Interac e-Transfer® Notice - Confirm screen
@@ -360,7 +360,7 @@ window.onload = function(e) {
 				
 			document.querySelector('.success-text').textContent = "Notice resent successfully";
 				
-			showPrintButton();
+			//showPrintButton();
 		 }
 		 
 		 //Cancel Money Request screen
@@ -390,7 +390,7 @@ window.onload = function(e) {
 				
 			document.querySelector('.success-text').textContent = "Transfer Status Deleted";
 				
-			showPrintButton();
+			//showPrintButton();
 		 }
 		 
 		 //Edit Money Request - Receipt screen
@@ -488,7 +488,6 @@ window.onload = function(e) {
 			for (var i = 0; i < selects.length; i++)
 			{
 				selects[i].placeholder = "dd/mm/yyyy";
-				selects[i].type = "date";
 			}
 		}
 		
@@ -516,17 +515,17 @@ window.onload = function(e) {
 			
 			var topDisclaimerNode = document.createElement('div');
 			topDisclaimerNode.setAttribute("class", "top-disclaimer");
-			topDisclaimerNode.innerHTML ='To remind a recipient to accept the funds or request, click on <b>Resend Notice</b> beside the transfer. To edit a request, click on <b>Edit</b>. To cancel a transfer or request, click on <b>Cancel</b>.';
+			topDisclaimerNode.innerHTML ='To remind an Interac e-Transfer&reg; Recipient to accept the funds, click on <b>Resend Notice</b> beside the transfer. To edit a request, click on <b>Edit</b>. To cancel an Interac e-Transfer&reg;, or receive a refund for a declined e-Transfer click on <b>Cancel</b>.';
 			var bottomDisclaimerReferenceNode = document.querySelector('.summarygroup');
 			bottomDisclaimerReferenceNode.parentNode.insertBefore(topDisclaimerNode, bottomDisclaimerReferenceNode);
 		}
 		
 		//add class to formCancel on Edit Money Request screen
-		if(pageTitle == "Edit Money Request")
+		/*if(pageTitle == "Edit Money Request")
 		{
 			var formCancel = document.querySelectorAll('.formCancel');
 			formCancel[1].classList.add('hide-clear-button');
-		}
+		}*/
 
 		//Remove Delete and Edit text on Recipients screen
 		if(pageTitle == "Recipients")
@@ -565,20 +564,39 @@ window.onload = function(e) {
 			successImageReferenceNode.parentNode.insertBefore(successImageNode, successImageReferenceNode);
 		}*/
 		
+		
 		//Add class to eTransfer History screen table
 		if(pageTitle == "Interac e-Transfer® History")
 		{
-			
-			
-			if(document.querySelectorAll("span")[0].textContent == "You do not have any Interac e-Transfer® within this date range.")
+			if(document.querySelector("span") != null)
 			{
-				document.querySelector('.summarydata').classList.add('etransfer-history-table-withoutResults');
-				document.querySelector(".prose").classList.add("prose-w-100");
+				if(document.querySelectorAll("span")[0].textContent == "You do not have any Interac e-Transfer® within this date range.")
+				{
+					document.querySelector('.summarydata').classList.add('etransfer-history-table-withoutResults');
+					document.querySelector(".prose").classList.add("prose-w-100");
+				}
+				
+				else{
+					document.querySelector('.summarydata').classList.add('etransfer-history-table');
+				}
 			}
 			
 			else{
 				document.querySelector('.summarydata').classList.add('etransfer-history-table');
+				var showButton = document.querySelectorAll('.topic');
+				showButton[2].classList.add("d-block");
+				showButton[3].classList.add("d-block");
+				document.querySelector(".conclusion").classList.add("conclusion-pad-top");
 			}
+		}
+		
+		//Add class to eTransfer History screen table
+		if(pageTitle == "Interac e-Transfer® History - Details")
+		{
+			document.querySelector('.summarydata').classList.add('etransfer-history-table-details');
+			var showButton = document.querySelectorAll('.control');
+			showButton[0].classList.add("history-details-button");
+			document.querySelector(".conclusion").classList.add("conclusion-pad-top-details");
 		}
 		
 		//Add class to Delete Recipient error page

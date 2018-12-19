@@ -36,6 +36,7 @@ body {
 #PortletAuthentication,
 #addContactLink,
 .copyright,
+.instructions,
 .hint,
 .cntxthelp,
 .topic,
@@ -46,17 +47,44 @@ ul.show-topic li.link1 {
 	display: none;
 }
 
-.d-none{
+.d-none {
 	display: none !important;
 }
 
-.disclaimer-hine-height{
+.disclaimer-hine-height {
 	line-height: 1.5em;
 }
 
 .show-ReceiptHeader {
 	display: block !important;
 	padding-top: 25px;
+}
+
+.d-block {
+	display: block !important;
+}
+
+.d-block li.link1 {
+	list-style: none;
+	display: block !important;
+}
+
+.d-block li.link1 a {
+	display: block !important;
+}
+
+.d-block li.link0,
+.d-block li.link2 {
+	display: none !important;
+}
+
+.conclusion-pad-top {
+	padding-top: 100px;
+	padding-left: 40px;
+}
+
+.conclusion-pad-top-details {
+	padding-top: 100px;
 }
 
 .show-link1 {
@@ -165,21 +193,21 @@ thead:focus,
 	outline: 0;
 }
 
-.show-div{
+.show-div {
 	display: block !important;
 	margin-bottom: 25px;
 }
 
-.add-padd-top{
+.add-padd-top {
 	margin-top: 85px !important;
 }
 
-.remove-padd-top{
+.remove-padd-top {
 	margin-top: 0 !important;
 	padding-bottom: 25px;
 }
 
-.editContainer[_ngcontent-ffr-6]{
+.editContainer[_ngcontent-ffr-6] {
 	background: none !important;
 }
 
@@ -289,15 +317,15 @@ p#acknowledgement1,
 	font-weight: bold;
 }
 
-#acceptedTermsAndConditionsText{
+#acceptedTermsAndConditionsText {
 	padding-left: 35px !important;
-    padding-top: 5px;
+	padding-top: 5px;
 	color: #000000;
 	font-family: Roboto-Regular, Arial, sans-serif;
 	font-size: 19.2px;
 }
 
-.registerUser{
+.registerUser {
 	background: white !important;
 }
 
@@ -391,7 +419,7 @@ p#acknowledgement1,
 .confirmation .string label,
 .show-ReceiptHeader .twoColRow .column label,
 .transfer-confirmation .requestMoneyFormStep2 label,
-.eufSendForm .required label{
+.eufSendForm .required label {
 	width: 273px !important;
 	display: inline-block !important;
 	color: #000000;
@@ -424,22 +452,26 @@ table.gst-table tbody tr td:nth-child(2) {
 .confirmation .string span.value,
 .show-ReceiptHeader .twoColRow .column span.value,
 .transfer-confirmation .requestMoneyFormStep2 .input,
-.eufSendForm .required div.input{
+.eufSendForm .required div.input {
 	height: 34px;
 	color: #000000;
 	font: 19.2px Roboto-Regular, Arial, sans-serif;
 	line-height: 34px;
 }
 
-.input-in-line{
+.eufSendForm .required div.input {
+	height: auto;
+}
+
+.input-in-line {
 	display: inline-block !important;
 }
 
-.consent-in-line{
+.consent-in-line {
 	padding-top: 50px;
 }
 
-.last-required{
+.last-required {
 	margin-bottom: 75px;
 }
 
@@ -726,7 +758,11 @@ ul.show-topic li {
 .formActions a,
 #addNewEmail,
 .show-topic .link0 a,
-.recipient-topic .link0 a {
+.recipient-topic .link0 a,
+ul.nav.topic li a[title="Print Receipt"],
+ul.nav.topic li a[title="Print receipt"],
+ul.nav.topic li a[title="Add recipient"],
+ul.nav.topic li a[title="Send another money request"] {
 	border-collapse: collapse;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px 0px;
 	box-sizing: border-box;
@@ -754,7 +790,11 @@ ul.show-topic li {
 .formActions a:hover,
 #addNewEmail:hover,
 .show-topic .link0 a:hover,
-.recipient-topic .link0 a:hover {
+.recipient-topic .link0 a:hover,
+ul.nav.topic li a[title="Print Receipt"]:hover,
+ul.nav.topic li a[title="Print receipt"]:hover,
+ul.nav.topic li a[title="Add recipient"]:hover,
+ul.nav.topic li a[title="Send another money request"]:hover {
 	background-color: #cde0f1;
 	color: #0067c6;
 	border: 2px solid #0067c6;
@@ -766,7 +806,11 @@ ul.show-topic li {
 .formActions a:after,
 #addNewEmail:after,
 .show-topic .link0 a:after,
-.recipient-topic .link0 a:after {
+.recipient-topic .link0 a:after,
+ul.nav.topic li a[title="Print Receipt"]:after,
+ul.nav.topic li a[title="Print receipt"]:after,
+ul.nav.topic li a[title="Add recipient"]:after,
+ul.nav.topic li a[title="Send another money request"]:after {
 	border-collapse: collapse;
 	box-sizing: border-box;
 	color: rgb(255, 255, 255);
@@ -783,7 +827,11 @@ ul.show-topic li {
 .formActions a :before,
 #addNewEmail:before,
 .show-topic .link0 a:before,
-.recipient-topic .link0 a:before {
+.recipient-topic .link0 a:before,
+ul.nav.topic li a[title="Print Receipt"]:before,
+ul.nav.topic li a[title="Print receipt"]:before,
+ul.nav.topic li a[title="Add recipient"]:before,
+ul.nav.topic li a[title="Send another money request"]:before {
 	border-collapse: collapse;
 	box-sizing: border-box;
 	color: rgb(255, 255, 255);
@@ -800,7 +848,10 @@ ul.show-topic li {
 .formActions input,
 .back-to-pending-transfers a,
 ul.show-topic li.link1 a,
-.request-button a {
+.request-button a,
+receipt-page-form ul.nav.topic li a[title="Send another money request"],
+.d-block .link1 a,
+.history-details-button a {
 	border-collapse: collapse;
 	box-sizing: border-box;
 	color: rgb(255, 255, 255);
@@ -829,7 +880,10 @@ ul.show-topic li.link1 a,
 .formActions input:hover,
 .back-to-pending-transfers a:hover,
 ul.show-topic li.link1 a: hover,
-.request-button a:hover {
+.request-button a:hover,
+receipt-page-form ul.nav.topic li a[title="Send another money request"]:hover,
+.d-block .link1 a:hover,
+.history-details-button a:hover {
 	background-color: #459914;
 	color: rgb(255, 255, 255);
 	box-shadow: 0 0 8px rgba(0, 0, 0, .15);
@@ -862,11 +916,20 @@ ul.show-topic li.link1 a: hover,
 	color: white;
 }
 
+table.etransfer-history-table tbody tr td.control div.control a {
+	background-image: url(../Images/action_details.png);
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	text-indent: -9999;
+}
+
 .pending-transfers-table table tbody tr th:last-child label {
 	color: #F2F3F6;
 }
 
-.pending-transfers-table table tbody tr td.recipient div.recipient{
+.pending-transfers-table table tbody tr td.recipient div.recipient {
 	max-width: 325px;
 }
 
@@ -1087,8 +1150,14 @@ table.recipients-table tbody tr td div.control a:first-child:hover {
 }
 
 table.etransfer-history-table,
-table.etransfer-history-table-withoutResults{
+table.etransfer-history-table-withoutResults,
+table.etransfer-history-table-details {
 	margin-bottom: 25px;
+}
+
+table.etransfer-history-table tbody tr.header,
+table.etransfer-history-table-details tbody tr.header {
+	display: table-row !important;
 }
 
 table caption {
@@ -1260,73 +1329,94 @@ input[type="checkbox"]:checked:before {
 /* Custom Radio */
 
 input[type="radio"] {
-    position: relative;
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: bottom;
-    cursor: pointer;
+	position: relative;
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	vertical-align: bottom;
+	cursor: pointer;
 	margin-right: 10px;
 }
 
 input[type="radio"]:hover:before {
-  border-color: #0067C6;
+	border-color: #0067C6;
 }
 
 input[type="radio"]:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    content: '';
-    border: 1.5px solid #767676;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	content: '';
+	border: 1.5px solid #767676;
 	border-radius: 50%;
 	background-color: white;
 	border-radius: 50%;
 }
 
 input[type="radio"]:after {
-  position: absolute;
-  display: none;
-  content: '';
+	position: absolute;
+	display: none;
+	content: '';
 }
 
 input[type="radio"]:checked:after {
-  display: block;
+	display: block;
 }
 
 input[type="radio"]:checked:after {
-    top: 0.35em;
-    left: 0.35em;
-    width: 0.8em;
-    height: 0.8em;
-    border-radius: 50%;
-    background: #0067C6;
+	top: 0.35em;
+	left: 0.35em;
+	width: 0.8em;
+	height: 0.8em;
+	border-radius: 50%;
+	background: #0067C6;
 }
 
 input[type="radio"]:checked:before {
 
-  /*border: #0067C6;*/
-  border-color: #0067C6;
-  box-shadow: inset 0px 0px 0px 1px #fff;
-  background: #0067C6;
+	/*border: #0067C6;*/
+	border-color: #0067C6;
+	box-shadow: inset 0px 0px 0px 1px #fff;
+	background: #0067C6;
 }
 
-.CCRAAdd .receipts .column.divHide,
-.CCRARemove .receipts .column.divHide {
+.receipts .column.divHide,
+.receipts .column.divHide {
 	display: none;
 }
 
 #errorPanel::before {
 	content: "";
 	display: block;
-	width: 100%;
 	height: 60px;
 	background-image: url(/DynamicContent/Resources/Images/warning_error.png);
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+ul.nav.topic {
+	padding-inline-start: 0;
+}
+
+ul.nav.topic li {
+	list-style-type: none;
+	display: none;
+}
+
+ul.nav.topic li.link0 {
+	display: block;
+}
+
+ul.nav.topic li a {
+	display: none;
+}
+
+ul.nav.topic li a[title="Print Receipt"],
+ul.nav.topic li a[title="Print receipt"] {
+	float: none;
 }
 
 /* Autodeposit */
@@ -1362,6 +1452,71 @@ input[type="radio"]:checked:before {
 	display: none;
 }
 
+receipt-page-form footertrademark::before {
+	content: "Note: Service charge will be applied to your account when the funds are deposited"
+}
+
+receipt-page-form ul.nav.topic li.link0 {
+	display: inline-block;
+}
+
+receipt-page-form ul.nav.topic li.link1 {
+	display: inline;
+}
+
+receipt-page-form ul.nav.topic li a[title="Print receipt"] {
+	float: none;
+}
+
+receipt-page-form ul.nav.topic li a[title="Send another money request"] {
+	float: left;
+}
+
+confirm-page-form form::before,
+receipt-page-form form::before {
+	display: block;
+	text-align: center;
+	height: 40px;
+	padding-top: 140px;
+	margin-top: -60px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+confirm-page-form form::before {
+	content: "Please confirm money request details";
+	background-image: url(/DynamicContent/Resources/Images/warning_alert.png);
+}
+
+receipt-page-form form::before {
+	content: "Request Status Completed";
+	background-image: url(/DynamicContent/Resources/Images/warning_success.png);
+}
+
+/* ModifyMoneyRequest */
+modify-request-form .formActions .formCancel a[title="Clear"] {
+	display: none;
+}
+
+/* CancelMoneyRequest */
+cancel-request-form .formActions::before {
+	content: "This message will appear in the cancellation notice sent to the recipient.";
+	display: block;
+	text-align: left;
+	margin-bottom: 50px;
+}
+
+/* CertapayReceiveTransfer */
+
+form[action*="EmailMoney/Receive/?step=StepReceive2"]::before {
+	content: "You have answered the security question correctly. Please indicate if you wish to accept or decline this transfer."
+}
+
+form[action*="EmailMoney/Receive/?step=StepAuthenticate2"]::before {
+	content: "To accept or decline this transfer, you must correctly answer the security question below."
+}
+
 @media only screen and (min-width: 768px) {
 	.deleteModalText {
 		height: 64px;
@@ -1371,24 +1526,31 @@ input[type="radio"]:checked:before {
 
 @media only screen and (max-width: 767px) {
 
+	table.etransfer-history-table tbody tr,
+	table.etransfer-history-table tbody tr td,
+	table.etransfer-history-table-details tbody tr,
+	table.etransfer-history-table-details tbody tr td {
+		width: 100% !important;
+	}
+
 	body {
 		margin: 15px;
 	}
 
-	#acceptedTermsAndConditionsText{
+	#acceptedTermsAndConditionsText {
 		font-size: 16px;
 	}
-	
-	table.etransfer-history-table-withoutResults tbody tr.header{
+
+	table.etransfer-history-table-withoutResults tbody tr.header {
 		display: none !important;
 	}
-	
-	table.etransfer-history-table-withoutResults tbody tr td.prose-w-100{
+
+	table.etransfer-history-table-withoutResults tbody tr td.prose-w-100 {
 		width: 100% !important;
 	}
-	
+
 	.required,
- 	.requirederror{
+	.requirederror {
 		/* margin-top: 50px !important; */
 		padding-left: 0 !important;
 		padding-right: 0 !important;
@@ -1446,7 +1608,9 @@ input[type="radio"]:checked:before {
 	.formActions input,
 	.back-to-pending-transfers a,
 	ul.show-topic li.link1 a,
-	.request-button a {
+	.request-button a,
+	.d-block .link1 a,
+	.history-details-button a {
 		min-width: 0 !important;
 		width: 100% !important;
 	}
@@ -1667,6 +1831,15 @@ input[type="radio"]:checked:before {
 		padding-bottom: 0 !important;
 	}
 
+	.d-block ul.d-block {
+		padding-left: 0;
+	}
+
+	.conclusion-pad-top {
+		padding-top: 0;
+		padding-left: 0;
+	}
+
 	/*NEW STUFF*/
 
 	/* table.auto-deposit-settings--first-table,
@@ -1698,9 +1871,19 @@ input[type="radio"]:checked:before {
 	}
 
 	table.recipients-table tbody tr.header,
-	.pending-transfers-table table tbody tr.header {
+	.pending-transfers-table table tbody tr.header,
+	table.etransfer-history-table tbody tr.header,
+	table.etransfer-history-table-details tbody tr.header {
 		display: none !important;
-		;
+	}
+
+	table.etransfer-history-table tbody tr td.currency {
+		margin-top: 75px;
+	}
+
+	table.etransfer-history-table tbody tr td.recipient div.recipient {
+		word-break: break-word;
+		margin-bottom: 10px;
 	}
 
 	table.recipients-table tbody tr td,
@@ -1728,7 +1911,10 @@ input[type="radio"]:checked:before {
 	table.recipients-table tbody tr th.date label,
 	table.recipients-table tbody tr td.contact,
 	table.recipients-table tbody tr td.date,
-	table.recipients-table tbody tr td.information {
+	table.recipients-table tbody tr td.information,
+	table.etransfer-history-table tbody tr td.recipient,
+	table.etransfer-history-table tbody tr td.date,
+	table.etransfer-history-table-details tbody tr td.date {
 		padding-left: 0px;
 	}
 
@@ -1864,10 +2050,50 @@ input[type="radio"]:checked:before {
 		display: none !important;
 	}
 
+	receipt-page-form ul.nav.topic li.link1 {
+		display: inline-block;
+	}
+
 	/*
 Label the data
 You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
 */
+
+	table.etransfer-history-table-details tbody tr td.date:before {
+		content: "Date";
+		font-weight: bold;
+	}
+
+	table.etransfer-history-table-details tbody tr td.status:before {
+		content: "Status";
+		font-weight: bold;
+	}
+
+	table.etransfer-history-table-details tbody tr td.memo:before {
+		content: "Message";
+		font-weight: bold;
+	}
+
+	table.etransfer-history-table tbody tr td.date:before {
+		content: "Transfer Date";
+		font-weight: bold;
+	}
+
+	table.etransfer-history-table tbody tr td.recipient:before {
+		content: "Transfer From/To";
+		font-weight: bold;
+	}
+
+	table.etransfer-history-table tbody tr td.currency:before {
+		content: "Amount";
+		font-weight: bold;
+	}
+
+	table.etransfer-history-table tbody tr td.status:before {
+		content: "Status";
+		font-weight: bold;
+	}
+
 	table.recipients-table tbody tr td:nth-of-type(1):before {
 		content: "Recipient";
 		font-weight: bold;
@@ -1950,6 +2176,11 @@ You could also use a data-* attribute and content for this. That way "bloats" th
 	table.cra-table tbody tr.body-rows td:last-child a {
 		background-position: left !important;
 		width: 31px !important;
+	}
+
+	ul.nav.topic li a[title="Print Receipt"],
+	ul.nav.topic li a[title="Print receipt"] {
+		display: none;
 	}
 }
 
